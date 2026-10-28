@@ -1,0 +1,7 @@
+<!doctype html>
+<html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>Narcissism Counter</title>
+<style>html,body{height:100%;margin:0}body{display:grid;place-items:center;background:white;color:black;font-family:Arial,Helvetica,sans-serif}#count{font-size:clamp(120px,30vw,400px);font-weight:400;line-height:1}</style></head>
+<body><main id="count" aria-label="Today's posts mentioning narcissism-related terms">–</main><script>
+async function refresh(){try{let r=await fetch('count.json?cache='+Date.now());if(!r.ok)throw Error('HTTP '+r.status);let d=await r.json();document.getElementById('count').textContent=(d.status==='ok'&&Number.isInteger(d.count))?String(d.count):'–';}catch(e){console.error(e);document.getElementById('count').textContent='–';}}
+refresh();setInterval(refresh,60000);
+</script></body></html>
