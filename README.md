@@ -1,44 +1,80 @@
-# Narcissism Counter
+# THE AURA TIE DYE NARCISSIST COUNTER
 
-A minimalist, automated daily count of **observed** posts mentioning narcissism-related terms (including common misspellings) from a third-party Facebook Page RSS feed. Displays one black number on white. Uses the America/New_York day boundary.
+### An automated scientific investigation into the world's first Facebook-based textile industry supervillain.
 
-## Get the feed (free, if supported)
+## >be me
+> \> be small-town Pennsylvania tie-dye entrepreneur  
+> \> manufacture colorful shirts in a market that apparently doesn't understand my genius  
+> \> declare myself a leader of the textile industry  
+> \> customers refuse to purchase my revolutionary fabric technology  
+> \> clearly the customers are the problem  
+> \> post about it on Facebook  
+> \> someone disagrees  
+> \> NARCISSIST  
+> \> mailman shows up  
+> \> potential narcissist detected  
+> \> post again  
+> \> it's been 4 minutes  
+> \> post again  
 
-1. Visit https://fetchrss.com/source/facebook and register for a free account.
-2. Paste `https://www.facebook.com/aura.tie.dye` and generate a public Facebook Page feed.
-3. Check that FetchRSS actually returns the page's posts and that its XML includes complete body text, permalink/ID, and publication date. If not, the project **cannot count correctly** with that source.
-4. Copy the direct XML RSS URL, not the Facebook URL.
+**The industrial revolution and its consequences have been a disaster for the tie-dye industry.**
 
-FetchRSS's free tier generally shows only 5 items and updates about every 24 hours; Facebook-specific timing varies. The count is therefore **not guaranteed to capture every post**, and can lag a day. This project does not directly scrape Facebook or bypass its restrictions.
+---
 
-## Deploy
+## WHAT IS THIS?
 
-1. Create a **public** GitHub repo called `hot-dog-counter`.
-2. Upload the *contents* of this folder, including `.github/workflows/update.yml` (make sure hidden folders are included). GitHub's web upload may not preserve hidden directories in some clients; alternatively use `git add -A` and `git push`.
-3. In repo **Settings → Secrets and variables → Actions → New repository secret**, set **Name** `FEED_URL` and paste the direct RSS XML URL as its value.
-4. Under repo **Settings → Actions → General → Workflow permissions**, select **Read and write permissions** if needed to allow committing the JSON files.
-5. In repo **Settings → Pages → Build and deployment**, select **Deploy from a branch**, branch `main`, folder `/ (root)`, and Save.
-6. Under **Actions → Update narcissism counter → Run workflow**, run it once. Look at logs if it fails.
-7. Open `https://YOUR_USERNAME.github.io/hot-dog-counter/`.
+The **Aura Tie Dye Narcissist Counter™** is an automated monitoring system designed to answer one of the most important questions in modern textile research:
 
-GitHub runs the updater hourly at minute 17 New York time. This doesn't force FetchRSS to refresh faster. A `–` indicates no successfully retrieved count yet. A `0` means none of the **observed** feed posts for the current day matched, not necessarily zero posts on Facebook.
+**How many Facebook posts can one tie-dye entrepreneur make about narcissists in a single day?**
 
-## Rules and caveats
+Some men count their profits. Others count their customers.
 
-- Counts each matching post once, regardless of how many times the word appears. Case-insensitive matching allows up to two character edits (insertions, deletions, or substitutions) relative to the included word forms. Some misspellings might be missed, and unrelated words could occasionally match.
-- Uses each item's published date in `America/New_York`, not the time the feed was fetched.
-- `seen.json` preserves previously observed IDs so posts can be counted even after they roll out of the RSS feed; this **cannot** recover posts the feed never supplied.
-- The feed may omit photos, descriptions, timestamps, or posts, causing incomplete counts. False zero is possible when a valid feed doesn't include all posts.
-- A provider failure stops the workflow without replacing the last good reading; the display may remain stale until next successful update.
-- The website is free; the RSS provider may change its free-tier limits or stop working.
-- Observe the Facebook platform rules and the feed provider's terms. A third-party feed is not an official Meta authorization.
+We count the narcissists.
 
-## Local test
+This groundbreaking technology monitors the public Aura Tie Dye Facebook page and counts daily posts containing the word "narcissist" or its various linguistic mutations.
 
-`FEED_URL='https://YOUR-FEED-URL.xml' python update.py`
+Because apparently selling tie-dye shirts in rural Pennsylvania is less important than conducting a one-man psychological tribunal on Facebook.
 
-Python 3.12+, standard library only. No packages to install.
+## HOW IT WORKS
 
-## Updating an existing deployment
+Every hour, a sophisticated network of computers performs the following highly classified procedure:
 
-Replace `index.html`, `update.py`, `.github/workflows/update.yml`, and this README in your existing repository. Keep your existing `FEED_URL` secret. **Reset `seen.json` to `{}`** before the first run: old matches were for the hot-dog phrase and should not carry over. The counter may temporarily undercount until previously published posts return in the feed.
+1. Retrieve available public posts from Aura Tie Dye's RSS feed.
+2. Search for **narcissist**, **narcissistic**, **narcissism**, and assorted creative misspellings.
+3. Count each matching post once, regardless of how many times the forbidden word appears.
+4. Display the resulting number in an enormous font.
+5. Repeat until either the Facebook posting stops or the heat death of the universe.
+
+The counter resets daily on Eastern Time.
+
+**NOTE:** Counts depend on which posts the RSS provider manages to retrieve. Missing posts may result in an undercount. Even our advanced textile surveillance infrastructure has limitations.
+
+## WHY DOES THIS EXIST?
+
+Because we live in an extraordinary era.
+
+An era in which a man can simultaneously claim to be revolutionizing the textile industry, lament the unwillingness of the general public to purchase his products, and produce enough Facebook discourse to qualify as a small regional newspaper.
+
+All from the comfort of a tie-dye operation.
+
+Historians may one day study this phenomenon.
+
+Until then, we have GitHub Actions.
+
+## THE SCIENCE
+
+**Hypothesis:** The frequency of the word "narcissist" on a tie-dye manufacturer's Facebook page may exceed the frequency of actual tie-dye sales.
+
+**Methodology:** Automated keyword detection.
+
+**Peer review:** Three idiots in a group chat.
+
+**Funding:** $0.
+
+**Scientific significance:** Immeasurable.
+
+---
+
+*This project is an unofficial parody created for entertainment. It counts publicly available words, not psychiatric diagnoses. No actual narcissism is being measured. All claims of textile industry dominance remain unverified.*
+
+**Built with Python, GitHub Actions, GitHub Pages, and an unreasonable commitment to the bit.**
